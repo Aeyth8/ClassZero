@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2e77cc63-ee41-4954-86f2-236059d85a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{ef55469b-21c1-4511-bf75-7fcdcf434d6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SDK\OnlineSubsystemUtils_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\CoreUObject_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Basic.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\OnlineSubsystem_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\EngineSettings_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Engine_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\ItemWheelV3SlotWI_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SDK.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyFixup.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="UnrealContainers.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NameCollisions.inl">
+      <Filter>SDK</Filter>
+    </None>
+  </ItemGroup>
+</Project>
