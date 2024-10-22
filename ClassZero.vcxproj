@@ -28,9 +28,11 @@
     <ClCompile Include="SDK\ItemWheelV3SlotWI_functions.cpp" />
     <ClCompile Include="SDK\OnlineSubsystemUtils_functions.cpp" />
     <ClCompile Include="SDK\OnlineSubsystem_functions.cpp" />
+    <ClCompile Include="SDK\SCT_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h" />
+    <ClInclude Include="MinHook\MinHook.h" />
     <ClInclude Include="PropertyFixup.hpp" />
     <ClInclude Include="SDK.hpp" />
     <ClInclude Include="UnrealContainers.hpp" />
@@ -95,6 +97,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>FCT</TargetName>
+    <LibraryPath>$(SolutionDir)MinHook;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
