@@ -10,6 +10,9 @@
     <Filter Include="MinHook">
       <UniqueIdentifier>{75f534ab-a95e-42d6-a3dd-773abf2ac8e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{4a431067-7ac1-4ce1-a160-efab9b91a23f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDK\OnlineSubsystemUtils_functions.cpp">
@@ -42,6 +45,12 @@
     <ClCompile Include="SDK\SCT_functions.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\PlayerListEntrySCT_functions.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK.hpp">
@@ -58,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="MinHook\MinHook.h">
       <Filter>MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

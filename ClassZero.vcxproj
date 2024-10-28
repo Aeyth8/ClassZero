@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="global.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="SDK\Basic.cpp" />
     <ClCompile Include="SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="SDK\EngineSettings_functions.cpp" />
@@ -28,11 +31,13 @@
     <ClCompile Include="SDK\ItemWheelV3SlotWI_functions.cpp" />
     <ClCompile Include="SDK\OnlineSubsystemUtils_functions.cpp" />
     <ClCompile Include="SDK\OnlineSubsystem_functions.cpp" />
+    <ClCompile Include="SDK\PlayerListEntrySCT_functions.cpp" />
     <ClCompile Include="SDK\SCT_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h" />
     <ClInclude Include="MinHook\MinHook.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="PropertyFixup.hpp" />
     <ClInclude Include="SDK.hpp" />
     <ClInclude Include="UnrealContainers.hpp" />
