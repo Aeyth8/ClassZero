@@ -12,9 +12,15 @@ SDK::UIpNetDriver* NetDriver;
 SDK::UKismetSystemLibrary* Kismet;
 
 uintptr_t GBA = 0;
+uintptr_t Crash1God;
 uintptr_t Crash1;
 uintptr_t Crash1Ass;
 
+static void CMD(std::string Command) {
+	std::wstring Mand;
+	Mand.assign(Command.begin(), Command.end());
+	Kismet->ExecuteConsoleCommand(World, SDK::FString(Mand.c_str()), Player0);
+}
 
 template<typename T>
 static std::vector<T*> FindObjects()
@@ -39,16 +45,34 @@ T* GetLastOf() {
 	return FindObjects<T>().back();
 }
 
+void ListAllObjectsOfClass(SDK::UClass* theClass, bool includeDefault) { // Taken from SystemDev/Gwog's code https://github.com/SyST3MDeV/rocketforever/blob/master/dllmain.cpp
+	for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
+	{
+		SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
+
+		if (!Obj)
+			continue;
+
+		if (Obj->IsDefaultObject() && !includeDefault)
+			continue;
+
+		if (Obj->IsA(theClass))
+		{
+			std::cout << Obj->GetFullName() << std::endl;
+		}
+	}
+}
 
 std::string Name = "";
 std::string SteamID = "";
 std::string PSNID = "";
 std::string SessionID = "";
 std::string UserID = "";
+std::string Faction = "";
 std::string Paste;
 int Flag{0};
-std::string Ident[] = {"Username: ", "SteamID: ", "PSNID: ", "SessionID: ", "UserID: "};
-std::string* Identifier[] = {&Name, &SteamID, &PSNID, &SessionID, &UserID};
+std::string Ident[] = {"Username: ", "SteamID: ", "PSNID: ", "SessionID: ", "UserID: ", "IsPersonoid: "};
+std::string* Identifier[] = {&Name, &SteamID, &PSNID, &SessionID, &UserID, &Faction};
 
 void Log(const std::string &msg) {
 	std::cout << msg << std::endl;
@@ -68,15 +92,17 @@ void PIDs() {
 		PSNID = States->PSNID.ToString();
 		SessionID = States->SessionID.ToString();
 		UserID = States->ABUserID.ToString();
+		Faction = States->Faction == SDK::EPlayerFaction::Personoid ? "True" : "False";
 
 		//Paste = "\n\nUsername: " + Name + "\n\nSteamID: " + SteamID + "\n\nPSNID: " + PSNID + "\n\nSession ID: " + SessionID + "\n\nUserID: " + UserID + "\n\n";
-		for (int i = 0; i < 5; ++i) {
+		for (int i = 0; i < 6; ++i) {
 			*Identifier[i] != "" ? Paste += Ident[i] + *Identifier[i] + "\n\n" : "", Flag++;
 		}
-		if (Flag != 5) {
+		if (Flag != 6) {
 			std::cout << Paste << std::endl;
 		}
 		Paste = "";
+		
 		
 		/*States->PlayerNamePrivate.ToString() != "" ? Name = "Username: " + States->PlayerNamePrivate.ToString() + "\n" : "";
 		States->SteamUserID.ToString() != "" ? SteamID = "SteamID: " + States->SteamUserID.ToString() + "\n" : "";
@@ -91,9 +117,20 @@ void PIDs() {
 	}
 }
 
+void TravelMatch() {
+	CMD("open /Game/Mods/TestMap");
+	//GetLastOf<SDK::ASCTGameState_Warmup>()->CancelStart();
+	//GetLastOf<SDK::ACharacterSCT>()->AccelByteId = SDK::FString(L"A8TH3R");
+}
+
 namespace SDK {
 
 };
+
+typedef void* (__thiscall* Crash1Creator)(__int64 param1, int param2, int param3);
+void* NoCreator1(__int64 param1, int param2, int param3) {
+	return nullptr;
+}
 
 typedef void* (__thiscall* StupidCrash1)(__int64* param1, __int64* param2);
 void* AntiCrash1(__int64* param1, __int64* param2) {
@@ -114,6 +151,10 @@ void Hook() {
 	Crash1Assistor No_Help1 = (Crash1Assistor)Crash1Ass;
 	Hooked = MH_CreateHook(No_Help1, &AntiAssistor, reinterpret_cast<LPVOID*>(&Crash1Ass));
 	Hooked = MH_EnableHook(No_Help1);
+
+	Crash1Creator Godless1 = (Crash1Creator)Crash1God;
+	Hooked = MH_CreateHook(Godless1, &NoCreator1, reinterpret_cast<LPVOID*>(&Crash1God));
+	Hooked = MH_EnableHook(Godless1);
 }
 
 void Init() {
@@ -134,6 +175,7 @@ void CreateMainWindow();
 
 void InitVars() {
 	GBA = (uintptr_t)GetModuleHandleA("FCTClient-Win64-Shipping.exe");
+	Crash1God = GBA + 0x11977A0;
 	Crash1 = GBA + 0x11B6FAC;
 	Crash1Ass = GBA + 0x11B6F9F;
 	Engine = SDK::UEngine::GetEngine();
@@ -168,7 +210,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ulReasonForCall, LPVOID lpReserved
 
 void InitGUI(HWND hWnd) {
 	CreateWindow(L"BUTTON", L"Print All Player IDs", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 60, 250, 50, hWnd, (HMENU)1, GetModuleHandle(NULL), NULL);
-	
+	CreateWindow(L"BUTTON", L"Travel To Backfill", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 120, 250, 50, hWnd, (HMENU)2, GetModuleHandle(NULL), NULL);
 
 }
 
@@ -177,10 +219,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 	case WM_COMMAND:
 		if (HIWORD(wParam) == BN_CLICKED) {
 			int id = LOWORD(wParam);
-			switch (id) {
+			switch (id) 
+			{
 			case 1:
 				Log("Called PlayerIDs");
 				PIDs();
+				break;
+			case 2:
+				Log("Trying to switchlevels");
+				TravelMatch();
 				break;
 			}
 		}

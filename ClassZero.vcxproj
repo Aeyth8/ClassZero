@@ -32,6 +32,7 @@
     <ClCompile Include="SDK\OnlineSubsystemUtils_functions.cpp" />
     <ClCompile Include="SDK\OnlineSubsystem_functions.cpp" />
     <ClCompile Include="SDK\PlayerListEntrySCT_functions.cpp" />
+    <ClCompile Include="SDK\SCTPlayerState_MatchBP_functions.cpp" />
     <ClCompile Include="SDK\SCT_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
