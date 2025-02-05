@@ -776,7 +776,7 @@ static_assert(offsetof(AOnlineBeaconHostObject, ClientActors) == 0x000238, "Memb
 
 // Class OnlineSubsystemUtils.OnlineEngineInterfaceImpl
 // 0x0100 (0x0128 - 0x0028)
-class OnlineSubsystemUtils::UOnlineEngineInterfaceImpl final : public UOnlineEngineInterface
+/*class OnlineSubsystemUtils::UOnlineEngineInterfaceImpl final : public UOnlineEngineInterface
 {
 public:
 	class FName                                   VoiceSubsystemNameOverride;                        // 0x0028(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -793,9 +793,8 @@ public:
 	}
 };
 static_assert(alignof(OnlineSubsystemUtils::UOnlineEngineInterfaceImpl) == 0x000008, "Wrong alignment on OnlineSubsystemUtils::UOnlineEngineInterfaceImpl");
-static_assert(sizeof(OnlineSubsystemUtils::UOnlineEngineInterfaceImpl) == 0x000128, "Wrong size on OnlineSubsystemUtils::UOnlineEngineInterfaceImpl");
 static_assert(offsetof(OnlineSubsystemUtils::UOnlineEngineInterfaceImpl, VoiceSubsystemNameOverride) == 0x000028, "Member 'OnlineSubsystemUtils::UOnlineEngineInterfaceImpl::VoiceSubsystemNameOverride' has a wrong offset!");
-
+*/
 // Class OnlineSubsystemUtils.OnlinePIESettings
 // 0x0018 (0x0050 - 0x0038)
 class UOnlinePIESettings final : public UDeveloperSettings
