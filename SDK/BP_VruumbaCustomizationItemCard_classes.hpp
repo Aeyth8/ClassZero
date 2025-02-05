@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SCT_structs.hpp"
 #include "BP_ItemCard_classes.hpp"
+#include "SCT_structs.hpp"
 
 
 namespace SDK

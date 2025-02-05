@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "UMG_classes.hpp"
 #include "ETitleStyle_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

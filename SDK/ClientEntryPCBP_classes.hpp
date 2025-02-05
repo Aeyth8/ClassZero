@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "E_StartScreenTabs_structs.hpp"
 #include "FCT_classes.hpp"
+#include "E_StartScreenTabs_structs.hpp"
 
 
 namespace SDK

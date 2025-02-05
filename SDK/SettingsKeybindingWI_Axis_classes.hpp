@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SettingsKeybindingWI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "SCT_structs.hpp"
-#include "SettingsKeybindingWI_classes.hpp"
 
 
 namespace SDK

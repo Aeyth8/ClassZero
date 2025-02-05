@@ -62,7 +62,7 @@ public:
 	void BndEvt__ItemWheelV3SlotWI_ControllerIconHelperWI_K2Node_ComponentBoundEvent_1_OnShowControllerKeyIcon__DelegateSignature(class UTexture2D* Icon);
 	void BndEvt__ItemWheelV3SlotWI_ControllerIconHelperWI_K2Node_ComponentBoundEvent_0_OnResetControllerKey__DelegateSignature();
 	void PreConstruct(bool IsDesignTime);
-	void Rebuild(SDK::E_ItemSlotStates Selection);
+	void Rebuild(E_ItemSlotStates Selection);
 	void NotEquippedHover();
 	void NotEquipped();
 	void Equipped(EInventorySlotID Slot_0);

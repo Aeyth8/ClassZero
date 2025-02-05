@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "E_KeyCardColors_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AkAudio_structs.hpp"
 #include "Engine_structs.hpp"
-#include "E_KeyCardColors_structs.hpp"
 
 
 namespace SDK::Params

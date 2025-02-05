@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_CustomizationSettings_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_CustomizationSettings_classes.hpp"
 #include "SCT_structs.hpp"
 
 
@@ -34,21 +34,21 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_FemaleCustomizationConfig(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void OnSuccess_FB44445946B476990F75B3886DB23F19(const struct FAccelByteModelsEntitlementPagingSlicedResult& Entitlements, int32 Code, const class FString& Message);
 	void OnFail_FB44445946B476990F75B3886DB23F19(int32 Code, const class FString& Message);
+	void ReceiveBeginPlay();
 	void GetHeadItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
 	void GetBodyItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
 	void GetLegsItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
 	void GetFeetItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
 	void Get_Category_DTRow_Names(EPlayerCustomizationType Type, TArray<class FName>* RowNames);
 	void GetFacialHairItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
-	void GetEyewearItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
-	void GetSkinColorFromDT(const class FString& RowName, struct FPlayerCustomizationColorMaterial* OutRow);
 	void GetAccessoryItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
+	void GetEyewearItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item);
+	void GetPresetFromDT(const class FString& RowName, struct FPlayerCustomizationPreset* OutRow);
+	void GetSkinColorFromDT(const class FString& RowName, struct FPlayerCustomizationColorMaterial* OutRow);
 	void GetSkinColorInfo(TArray<class FName>* OutRowNames, class UDataTable** DataTable, class FString* Selected);
 	void GetPresetInfo(TArray<class FName>* OutRowNames, class UDataTable** DataTable, class FString* Selected);
-	void GetPresetFromDT(const class FString& RowName, struct FPlayerCustomizationPreset* OutRow);
 	void GetGender(EPlayerCustomizationGender* Gender);
 
 public:

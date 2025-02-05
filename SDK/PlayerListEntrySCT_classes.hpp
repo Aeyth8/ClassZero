@@ -28,7 +28,7 @@ public:
 	class UImage*                                 BackgroundGradient;                                // 0x0268(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 DownvoteBackground;                                // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             DownVoteCount;                                     // 0x0278(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 DownVoted;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Downvoted;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 DownvoteFrame;                                     // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_167;                                         // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 IsMuted;                                           // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -120,7 +120,7 @@ static_assert(offsetof(UPlayerListEntrySCT_C, UberGraphFrame) == 0x000260, "Memb
 static_assert(offsetof(UPlayerListEntrySCT_C, BackgroundGradient) == 0x000268, "Member 'UPlayerListEntrySCT_C::BackgroundGradient' has a wrong offset!");
 static_assert(offsetof(UPlayerListEntrySCT_C, DownvoteBackground) == 0x000270, "Member 'UPlayerListEntrySCT_C::DownvoteBackground' has a wrong offset!");
 static_assert(offsetof(UPlayerListEntrySCT_C, DownVoteCount) == 0x000278, "Member 'UPlayerListEntrySCT_C::DownVoteCount' has a wrong offset!");
-static_assert(offsetof(UPlayerListEntrySCT_C, DownVoted) == 0x000280, "Member 'UPlayerListEntrySCT_C::DownVoted' has a wrong offset!");
+static_assert(offsetof(UPlayerListEntrySCT_C, Downvoted) == 0x000280, "Member 'UPlayerListEntrySCT_C::Downvoted' has a wrong offset!");
 static_assert(offsetof(UPlayerListEntrySCT_C, DownvoteFrame) == 0x000288, "Member 'UPlayerListEntrySCT_C::DownvoteFrame' has a wrong offset!");
 static_assert(offsetof(UPlayerListEntrySCT_C, Image_167) == 0x000290, "Member 'UPlayerListEntrySCT_C::Image_167' has a wrong offset!");
 static_assert(offsetof(UPlayerListEntrySCT_C, IsMuted) == 0x000298, "Member 'UPlayerListEntrySCT_C::IsMuted' has a wrong offset!");

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "E_ScoreCategories_structs.hpp"
-#include "AkAudio_structs.hpp"
-#include "SCT_structs.hpp"
 #include "S_Score_structs.hpp"
+#include "AkAudio_structs.hpp"
+#include "E_ScoreCategories_structs.hpp"
+#include "SCT_structs.hpp"
 
 
 namespace SDK::Params

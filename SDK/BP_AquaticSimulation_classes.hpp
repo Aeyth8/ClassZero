@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "BS_AquaticInteraction_structs.hpp"
+#include "BE_Resolution_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "BS_AquaticInteraction_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "BE_Resolution_structs.hpp"
 
 
 namespace SDK

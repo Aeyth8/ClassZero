@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "E_ScoreCategories_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params

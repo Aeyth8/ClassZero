@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "ALS_ViewMode_structs.hpp"
-#include "ALS_MovementMode_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "ALS_Gait_structs.hpp"
-#include "IdleEntryState_structs.hpp"
 #include "PivotParams_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ALS_RotationMode_structs.hpp"
+#include "IdleEntryState_structs.hpp"
+#include "ALS_MovementMode_structs.hpp"
 #include "ALS_Stance_structs.hpp"
+#include "ALS_Gait_structs.hpp"
 
 
 namespace SDK::Params

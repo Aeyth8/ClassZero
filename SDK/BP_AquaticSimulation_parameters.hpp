@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "BS_AquaticInteraction_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BS_AquaticInteractionData_structs.hpp"
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SCT_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "E_StartScreenTabs_structs.hpp"
+#include "SCT_structs.hpp"
 #include "CM_E_MenuAreas_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK::Params

@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Gait_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "IdleEntryState_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Gait_structs.hpp"
 #include "MovementMode_structs.hpp"
 #include "RPC_Enum_structs.hpp"
 #include "Stance_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK

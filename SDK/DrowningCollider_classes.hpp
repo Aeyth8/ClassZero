@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
-#include "CharacterColliderBP_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "CharacterColliderBP_classes.hpp"
 
 
 namespace SDK

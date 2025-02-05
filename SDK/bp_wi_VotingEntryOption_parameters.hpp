@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
 #include "E_Characters_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "UMG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

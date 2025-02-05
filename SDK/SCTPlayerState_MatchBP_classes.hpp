@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "E_KeyCardColors_structs.hpp"
 #include "SCT_structs.hpp"
 #include "SCT_classes.hpp"
+#include "E_KeyCardColors_structs.hpp"
 #include "E_ScoreCategories_structs.hpp"
 
 

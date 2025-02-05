@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "E_KeyCardColors_structs.hpp"
 #include "SCT_structs.hpp"
-#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "E_KeyCardColors_structs.hpp"
 #include "S_Score_structs.hpp"
 #include "E_ScoreCategories_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "S_Karma_structs.hpp"
 
 

@@ -245,6 +245,55 @@ static_assert(offsetof(BP_MaleCustomizationConfig_C_GetSkinColorFromDT, CallFunc
 static_assert(offsetof(BP_MaleCustomizationConfig_C_GetSkinColorFromDT, CallFunc_GetDataTableRowFromName_OutRow_1) == 0x000060, "Member 'BP_MaleCustomizationConfig_C_GetSkinColorFromDT::CallFunc_GetDataTableRowFromName_OutRow_1' has a wrong offset!");
 static_assert(offsetof(BP_MaleCustomizationConfig_C_GetSkinColorFromDT, CallFunc_GetDataTableRowFromName_ReturnValue_1) == 0x000080, "Member 'BP_MaleCustomizationConfig_C_GetSkinColorFromDT::CallFunc_GetDataTableRowFromName_ReturnValue_1' has a wrong offset!");
 
+// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetPresetFromDT
+// 0x0148 (0x0148 - 0x0000)
+struct BP_MaleCustomizationConfig_C_GetPresetFromDT final
+{
+public:
+	class FString                                 RowName;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FPlayerCustomizationPreset             OutRow;                                            // 0x0010(0x0060)(Parm, OutParm)
+	struct FPlayerCustomizationPreset             CallFunc_GetDataTableRowFromName_OutRow;           // 0x0070(0x0060)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00D4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPlayerCustomizationPreset             CallFunc_GetDataTableRowFromName_OutRow_1;         // 0x00E0(0x0060)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue_1;    // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_MaleCustomizationConfig_C_GetPresetFromDT) == 0x000008, "Wrong alignment on BP_MaleCustomizationConfig_C_GetPresetFromDT");
+static_assert(sizeof(BP_MaleCustomizationConfig_C_GetPresetFromDT) == 0x000148, "Wrong size on BP_MaleCustomizationConfig_C_GetPresetFromDT");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, RowName) == 0x000000, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::RowName' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, OutRow) == 0x000010, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::OutRow' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_OutRow) == 0x000070, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0000D0, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_Conv_StringToName_ReturnValue) == 0x0000D4, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_OutRow_1) == 0x0000E0, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_OutRow_1' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_ReturnValue_1) == 0x000140, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_ReturnValue_1' has a wrong offset!");
+
+// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetAccessoryItemFromDT
+// 0x0220 (0x0220 - 0x0000)
+struct BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT final
+{
+public:
+	class FString                                 TableKey;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FPlayerCustomizationItemTableRow       Item;                                              // 0x0010(0x00A8)(Parm, OutParm)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPlayerCustomizationItemTableRow       CallFunc_GetDataTableRowFromName_OutRow;           // 0x00C0(0x00A8)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPlayerCustomizationItemTableRow       CallFunc_GetDataTableRowFromName_OutRow_1;         // 0x0170(0x00A8)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue_1;    // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT) == 0x000008, "Wrong alignment on BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT");
+static_assert(sizeof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT) == 0x000220, "Wrong size on BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, TableKey) == 0x000000, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::TableKey' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, Item) == 0x000010, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::Item' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_Conv_StringToName_ReturnValue) == 0x0000B8, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_OutRow) == 0x0000C0, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000168, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_OutRow_1) == 0x000170, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_OutRow_1' has a wrong offset!");
+static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_ReturnValue_1) == 0x000218, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_ReturnValue_1' has a wrong offset!");
+
 // Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetEyewearItemFromDT
 // 0x0220 (0x0220 - 0x0000)
 struct BP_MaleCustomizationConfig_C_GetEyewearItemFromDT final
@@ -326,55 +375,6 @@ static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetInfo, OutRowNames) 
 static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetInfo, DataTable) == 0x000010, "Member 'BP_MaleCustomizationConfig_C_GetPresetInfo::DataTable' has a wrong offset!");
 static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetInfo, Selected) == 0x000018, "Member 'BP_MaleCustomizationConfig_C_GetPresetInfo::Selected' has a wrong offset!");
 static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetInfo, CallFunc_GetDataTableRowNames_OutRowNames) == 0x000028, "Member 'BP_MaleCustomizationConfig_C_GetPresetInfo::CallFunc_GetDataTableRowNames_OutRowNames' has a wrong offset!");
-
-// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetPresetFromDT
-// 0x0148 (0x0148 - 0x0000)
-struct BP_MaleCustomizationConfig_C_GetPresetFromDT final
-{
-public:
-	class FString                                 RowName;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FPlayerCustomizationPreset             OutRow;                                            // 0x0010(0x0060)(Parm, OutParm)
-	struct FPlayerCustomizationPreset             CallFunc_GetDataTableRowFromName_OutRow;           // 0x0070(0x0060)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00D4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPlayerCustomizationPreset             CallFunc_GetDataTableRowFromName_OutRow_1;         // 0x00E0(0x0060)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue_1;    // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_MaleCustomizationConfig_C_GetPresetFromDT) == 0x000008, "Wrong alignment on BP_MaleCustomizationConfig_C_GetPresetFromDT");
-static_assert(sizeof(BP_MaleCustomizationConfig_C_GetPresetFromDT) == 0x000148, "Wrong size on BP_MaleCustomizationConfig_C_GetPresetFromDT");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, RowName) == 0x000000, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::RowName' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, OutRow) == 0x000010, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::OutRow' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_OutRow) == 0x000070, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0000D0, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_Conv_StringToName_ReturnValue) == 0x0000D4, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_OutRow_1) == 0x0000E0, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_OutRow_1' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetPresetFromDT, CallFunc_GetDataTableRowFromName_ReturnValue_1) == 0x000140, "Member 'BP_MaleCustomizationConfig_C_GetPresetFromDT::CallFunc_GetDataTableRowFromName_ReturnValue_1' has a wrong offset!");
-
-// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetAccessoryItemFromDT
-// 0x0220 (0x0220 - 0x0000)
-struct BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT final
-{
-public:
-	class FString                                 TableKey;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FPlayerCustomizationItemTableRow       Item;                                              // 0x0010(0x00A8)(Parm, OutParm)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FPlayerCustomizationItemTableRow       CallFunc_GetDataTableRowFromName_OutRow;           // 0x00C0(0x00A8)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPlayerCustomizationItemTableRow       CallFunc_GetDataTableRowFromName_OutRow_1;         // 0x0170(0x00A8)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue_1;    // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT) == 0x000008, "Wrong alignment on BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT");
-static_assert(sizeof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT) == 0x000220, "Wrong size on BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, TableKey) == 0x000000, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::TableKey' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, Item) == 0x000010, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::Item' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_Conv_StringToName_ReturnValue) == 0x0000B8, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_OutRow) == 0x0000C0, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000168, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_OutRow_1) == 0x000170, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_OutRow_1' has a wrong offset!");
-static_assert(offsetof(BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT, CallFunc_GetDataTableRowFromName_ReturnValue_1) == 0x000218, "Member 'BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT::CallFunc_GetDataTableRowFromName_ReturnValue_1' has a wrong offset!");
 
 // Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetGender
 // 0x0002 (0x0002 - 0x0000)

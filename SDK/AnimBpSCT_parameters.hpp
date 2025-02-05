@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "PivotParams_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "MovementMode_structs.hpp"
 #include "E_interactionAnim_structs.hpp"
-#include "PivotParams_structs.hpp"
 #include "E_interactionAnimState_structs.hpp"
 #include "Stance_structs.hpp"
+#include "MovementMode_structs.hpp"
 #include "TurnAnims_structs.hpp"
 #include "IdleEntryState_structs.hpp"
 #include "Gait_structs.hpp"

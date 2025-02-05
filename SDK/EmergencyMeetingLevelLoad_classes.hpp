@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EmergencyMeetingSCTBP_classes.hpp"
 #include "Engine_structs.hpp"
+#include "EmergencyMeetingSCTBP_classes.hpp"
 
 
 namespace SDK

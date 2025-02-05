@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "InGameModalWidgets_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "InGameModalWidgets_structs.hpp"
 
 
 namespace SDK

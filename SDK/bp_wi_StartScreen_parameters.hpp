@@ -12,10 +12,10 @@
 
 #include "AccelByteUe4Sdk_structs.hpp"
 #include "AkAudio_structs.hpp"
-#include "E_StartScreenTabs_structs.hpp"
 #include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "SCT_structs.hpp"
+#include "E_StartScreenTabs_structs.hpp"
 
 
 namespace SDK::Params

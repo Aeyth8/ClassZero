@@ -155,6 +155,20 @@ void ALootStand_PassengerlogBP_C::LootPickedUp_Cosmetic()
 }
 
 
+// Function LootStand_PassengerlogBP.LootStand_PassengerlogBP_C.OpenStart_Cosmetic
+// (BlueprintCallable, BlueprintEvent)
+
+void ALootStand_PassengerlogBP_C::OpenStart_Cosmetic()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LootStand_PassengerlogBP_C", "OpenStart_Cosmetic");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function LootStand_PassengerlogBP.LootStand_PassengerlogBP_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -378,20 +392,6 @@ void ALootStand_PassengerlogBP_C::OnRep_CanCreatePassengerLog()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("LootStand_PassengerlogBP_C", "OnRep_CanCreatePassengerLog");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function LootStand_PassengerlogBP.LootStand_PassengerlogBP_C.OpenStart_Cosmetic
-// (BlueprintCallable, BlueprintEvent)
-
-void ALootStand_PassengerlogBP_C::OpenStart_Cosmetic()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LootStand_PassengerlogBP_C", "OpenStart_Cosmetic");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

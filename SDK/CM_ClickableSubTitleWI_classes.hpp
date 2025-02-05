@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "ETitleStyle_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "SCT_structs.hpp"
 #include "SCT_classes.hpp"
-#include "ETitleStyle_structs.hpp"
 
 
 namespace SDK

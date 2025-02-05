@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "LootStandBP_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AkAudio_structs.hpp"
 #include "PassengerLogFactType_structs.hpp"
 #include "SCT_structs.hpp"
+#include "LootStandBP_classes.hpp"
 
 
 namespace SDK
@@ -54,6 +54,7 @@ public:
 	void BndEvt__Interaction_Component_secondary_K2Node_ComponentBoundEvent_1_InteractionDelegate__DelegateSignature(const struct FInteractionPayload& Payload);
 	void BndEvt__Interaction_Component_secondary_K2Node_ComponentBoundEvent_0_InteractionSuccessfulDelegate__DelegateSignature();
 	void LootPickedUp_Cosmetic();
+	void OpenStart_Cosmetic();
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
 	void RemoveLogAndPreventInteraction();
@@ -69,7 +70,6 @@ public:
 	void RenderXray(bool On);
 	void PermanentlyDisableInteraction();
 	void OnRep_CanCreatePassengerLog();
-	void OpenStart_Cosmetic();
 
 	class ASCTPlayerController* TryGetInteractingPlayerController(bool* IsValid) const;
 	void TryGetInteractingPlayerState(class ASCTPlayerState** PlayerState, bool* Is_Valid) const;

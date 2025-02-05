@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SCT_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "S_TutorialContent_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK::Params

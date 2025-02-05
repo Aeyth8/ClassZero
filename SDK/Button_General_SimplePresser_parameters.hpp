@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "E_PanelStates_structs.hpp"
 #include "SCT_structs.hpp"
+#include "E_PanelStates_structs.hpp"
 #include "AkAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params

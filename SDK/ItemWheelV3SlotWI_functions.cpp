@@ -136,7 +136,7 @@ void UItemWheelV3SlotWI_C::PreConstruct(bool IsDesignTime)
 // Parameters:
 // E_ItemSlotStates                        Selection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UItemWheelV3SlotWI_C::Rebuild(SDK::E_ItemSlotStates Selection)
+void UItemWheelV3SlotWI_C::Rebuild(E_ItemSlotStates Selection)
 {
 	static class UFunction* Func = nullptr;
 

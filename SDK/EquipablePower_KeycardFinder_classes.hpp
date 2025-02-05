@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "E_KeyCardColors_structs.hpp"
 #include "SCT_classes.hpp"
 #include "AkAudio_structs.hpp"
+#include "E_KeyCardColors_structs.hpp"
 
 
 namespace SDK

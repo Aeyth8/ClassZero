@@ -12,8 +12,8 @@
 
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ETitleStyle_structs.hpp"
 #include "SCT_structs.hpp"
+#include "ETitleStyle_structs.hpp"
 #include "Engine_structs.hpp"
 
 

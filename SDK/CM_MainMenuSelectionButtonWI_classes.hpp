@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CM_HorizontalSelectionButtonWI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CM_E_MenuAreas_structs.hpp"
+#include "CM_HorizontalSelectionButtonWI_classes.hpp"
 
 
 namespace SDK

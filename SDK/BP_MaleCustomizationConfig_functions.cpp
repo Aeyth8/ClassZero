@@ -37,20 +37,6 @@ void ABP_MaleCustomizationConfig_C::ExecuteUbergraph_BP_MaleCustomizationConfig(
 }
 
 
-// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MaleCustomizationConfig_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.OnSuccess_C021A2EE445CC72F7830FCB715D9D09C
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -94,6 +80,20 @@ void ABP_MaleCustomizationConfig_C::OnFail_C021A2EE445CC72F7830FCB715D9D09C(int3
 	Parms.Message = std::move(Message);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MaleCustomizationConfig_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -241,6 +241,54 @@ void ABP_MaleCustomizationConfig_C::GetSkinColorFromDT(const class FString& RowN
 }
 
 
+// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetPresetFromDT
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FPlayerCustomizationPreset       OutRow                                                 (Parm, OutParm)
+
+void ABP_MaleCustomizationConfig_C::GetPresetFromDT(const class FString& RowName, struct FPlayerCustomizationPreset* OutRow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "GetPresetFromDT");
+
+	Params::BP_MaleCustomizationConfig_C_GetPresetFromDT Parms{};
+
+	Parms.RowName = std::move(RowName);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutRow != nullptr)
+		*OutRow = std::move(Parms.OutRow);
+}
+
+
+// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetAccessoryItemFromDT
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           TableKey                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FPlayerCustomizationItemTableRow Item                                                   (Parm, OutParm)
+
+void ABP_MaleCustomizationConfig_C::GetAccessoryItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "GetAccessoryItemFromDT");
+
+	Params::BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT Parms{};
+
+	Parms.TableKey = std::move(TableKey);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Item != nullptr)
+		*Item = std::move(Parms.Item);
+}
+
+
 // Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetEyewearItemFromDT
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -344,54 +392,6 @@ void ABP_MaleCustomizationConfig_C::GetPresetInfo(TArray<class FName>* OutRowNam
 
 	if (Selected != nullptr)
 		*Selected = std::move(Parms.Selected);
-}
-
-
-// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetPresetFromDT
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FPlayerCustomizationPreset       OutRow                                                 (Parm, OutParm)
-
-void ABP_MaleCustomizationConfig_C::GetPresetFromDT(const class FString& RowName, struct FPlayerCustomizationPreset* OutRow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "GetPresetFromDT");
-
-	Params::BP_MaleCustomizationConfig_C_GetPresetFromDT Parms{};
-
-	Parms.RowName = std::move(RowName);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (OutRow != nullptr)
-		*OutRow = std::move(Parms.OutRow);
-}
-
-
-// Function BP_MaleCustomizationConfig.BP_MaleCustomizationConfig_C.GetAccessoryItemFromDT
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FString                           TableKey                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FPlayerCustomizationItemTableRow Item                                                   (Parm, OutParm)
-
-void ABP_MaleCustomizationConfig_C::GetAccessoryItemFromDT(const class FString& TableKey, struct FPlayerCustomizationItemTableRow* Item)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaleCustomizationConfig_C", "GetAccessoryItemFromDT");
-
-	Params::BP_MaleCustomizationConfig_C_GetAccessoryItemFromDT Parms{};
-
-	Parms.TableKey = std::move(TableKey);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Item != nullptr)
-		*Item = std::move(Parms.Item);
 }
 
 

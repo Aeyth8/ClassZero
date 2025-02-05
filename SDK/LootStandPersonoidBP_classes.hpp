@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "LootStandBP_classes.hpp"
 #include "Engine_structs.hpp"
+#include "LootStandBP_classes.hpp"
 #include "AkAudio_structs.hpp"
 
 

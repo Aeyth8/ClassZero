@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "UMG_structs.hpp"
-#include "ControllerButtonType_structs.hpp"
 #include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "ControllerButtonType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

@@ -889,13 +889,13 @@ public:
 	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        PluginID;                                          // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 DLL;                                               // 0x0018(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Dll;                                               // 0x0018(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FAkPluginInfo) == 0x000008, "Wrong alignment on FAkPluginInfo");
 static_assert(sizeof(FAkPluginInfo) == 0x000028, "Wrong size on FAkPluginInfo");
 static_assert(offsetof(FAkPluginInfo, Name) == 0x000000, "Member 'FAkPluginInfo::Name' has a wrong offset!");
 static_assert(offsetof(FAkPluginInfo, PluginID) == 0x000010, "Member 'FAkPluginInfo::PluginID' has a wrong offset!");
-static_assert(offsetof(FAkPluginInfo, DLL) == 0x000018, "Member 'FAkPluginInfo::DLL' has a wrong offset!");
+static_assert(offsetof(FAkPluginInfo, Dll) == 0x000018, "Member 'FAkPluginInfo::Dll' has a wrong offset!");
 
 // ScriptStruct AkAudio.AkMainOutputSettings
 // 0x0028 (0x0028 - 0x0000)

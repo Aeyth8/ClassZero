@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "CM_SettingsTab_Base_classes.hpp"
 #include "UMG_structs.hpp"
 #include "SCT_structs.hpp"
-#include "CM_SettingsTab_Base_classes.hpp"
 
 
 namespace SDK

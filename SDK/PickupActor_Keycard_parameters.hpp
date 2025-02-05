@@ -112,7 +112,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x0038(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x0038(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue;   // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(PickupActor_Keycard_C_ASC_Has_Tag) == 0x000008, "Wrong alignment on PickupActor_Keycard_C_ASC_Has_Tag");

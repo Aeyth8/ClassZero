@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "E_PanelStates_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Button_General_classes.hpp"
+#include "E_PanelStates_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "Button_General_classes.hpp"
 
 
 namespace SDK

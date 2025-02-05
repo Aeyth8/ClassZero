@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "E_KeyCardColors_structs.hpp"
+#include "E_PickupType_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "SCT_structs.hpp"
-#include "E_KeyCardColors_structs.hpp"
-#include "AkAudio_structs.hpp"
-#include "E_PickupType_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK::Params

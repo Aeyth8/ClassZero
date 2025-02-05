@@ -29,7 +29,7 @@ public:
 	class UWidgetAnimation*                       ShowHighlight;                                     // 0x0268(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UImage*                                 BottomLine;                                        // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 DownFrame;                                         // 0x0278(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                DownVoted;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Downvoted;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             FactionText;                                       // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Left_status_bg;                                    // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Left_status_frame;                                 // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
@@ -131,7 +131,7 @@ static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, UberGraphFrame) == 0x000260,
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, ShowHighlight) == 0x000268, "Member 'UThumbsVotingMenuEntrySCT_C::ShowHighlight' has a wrong offset!");
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, BottomLine) == 0x000270, "Member 'UThumbsVotingMenuEntrySCT_C::BottomLine' has a wrong offset!");
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, DownFrame) == 0x000278, "Member 'UThumbsVotingMenuEntrySCT_C::DownFrame' has a wrong offset!");
-static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, DownVoted) == 0x000280, "Member 'UThumbsVotingMenuEntrySCT_C::DownVoted' has a wrong offset!");
+static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, Downvoted) == 0x000280, "Member 'UThumbsVotingMenuEntrySCT_C::Downvoted' has a wrong offset!");
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, FactionText) == 0x000288, "Member 'UThumbsVotingMenuEntrySCT_C::FactionText' has a wrong offset!");
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, Left_status_bg) == 0x000290, "Member 'UThumbsVotingMenuEntrySCT_C::Left_status_bg' has a wrong offset!");
 static_assert(offsetof(UThumbsVotingMenuEntrySCT_C, Left_status_frame) == 0x000298, "Member 'UThumbsVotingMenuEntrySCT_C::Left_status_frame' has a wrong offset!");

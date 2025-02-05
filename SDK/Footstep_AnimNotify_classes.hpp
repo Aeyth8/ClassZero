@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "FootstepType_structs.hpp"
 #include "Engine_classes.hpp"
+#include "FootstepType_structs.hpp"
 
 
 namespace SDK
