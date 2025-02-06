@@ -43,6 +43,10 @@ public:
 			UConsoleTemp.push_back(Character);
 		}
 
+		if (A8CL::Parse(UConsoleTemp)) { 
+			Log("Running custom command..."); 
+		}
+
 		if (UConsoleTemp.rfind("?listen") != std::string::npos) {
 			Log("Listen server called");
 			// Add logic later to allow for InitListen
