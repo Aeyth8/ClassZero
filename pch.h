@@ -23,6 +23,7 @@
 
 #include "Aeyth8/Logger.hpp"
 #include "Aeyth8/Pointers.hpp"
+#include "Aeyth8/FCTPointers.hpp"
 #include "Aeyth8/Hooks/Hooks.hpp"
 
 #endif //PCH_H

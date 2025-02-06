@@ -1,10 +1,6 @@
 #include "pch.h"
 
-namespace FCT
-{
-	SDK::UFCTGameInstanceBP_C* Instance;
 
-}
 
 
 static void Init() {
@@ -35,7 +31,7 @@ int __stdcall DllMain(HMODULE hModule, DWORD  ulReasonForCall, LPVOID lpReserved
 	DisableThreadLibraryCalls(hModule);
 
 	if (ulReasonForCall != DLL_PROCESS_ATTACH)
-		return TRUE;
+		return 1;
 
 	HANDLE hThread = CreateThread(nullptr, 0,
 		(LPTHREAD_START_ROUTINE)Init, hModule, 0, 0);

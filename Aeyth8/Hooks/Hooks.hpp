@@ -13,6 +13,7 @@ private:
 		{0x2F8A4C0, Net::WorldGetNetMode, &Net::FC_WorldGetNetMode, "WorldGetNetMode"},
 		{0x28B8090, Net::ActorGetNetMode, &Net::FC_ActorGetNetMode, "ActorGetNetMode"},
 		{0x076DA60, PreExit, &UFunctions::PTR::FC_AppPreExit, "AppPreExit"},
+		{0x2F24200, UFunctions::Browse, &UFunctions::PTR::FC_Browse, "Browse"},
 	};
 
 	// Handles the log messages and behavior for CreateAndEnableAllHooks()
@@ -121,7 +122,13 @@ public:
 		return Hooks::CreateAndEnableHook((GBA + OverrideOffset), Net::ActorGetNetMode, &Net::FC_ActorGetNetMode, "ActorGetNetMode");
 	}
 
-
+	template <typename UClass>
+	inline static void SpawnActor(SDK::UClass* Class = UClass::StaticClass(), SDK::FVector Location = Player0()->K2_GetActorLocation()) {
+		static __int64 (*Function)(SDK::UWorld* World, SDK::UClass* Class, SDK::FVector Location, SDK::FRotator Rotation, FActorSpawnParameters SpawnParameters) = decltype(Function)(GBA + 0x2C16BF0);
+		FActorSpawnParameters SpawnParameters{};
+		SpawnParameters.SpawnCollisionHandlingOverride = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		Function(UWorld(), Class, Location, SDK::FRotator(), SpawnParameters);
+	}
 
 
 };

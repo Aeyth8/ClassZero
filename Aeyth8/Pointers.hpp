@@ -25,6 +25,7 @@ extern inline uintptr_t GBA{0};
 // Hook used to close the logger and sync with the engine shutdown.
 extern void PreExit();
 
+
 /*template <typename T, typename Ret, typename... Args>
     inline auto Perhaps(T* ptr, Ret&& (T::*func)(Args&&...), Args&&... args) {
         if (ptr) {

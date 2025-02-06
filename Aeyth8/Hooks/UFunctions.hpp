@@ -65,16 +65,29 @@ public:
 		//PTR::FC_Login(NewPlayer, InRemoteRole, Portal, Options, UniqueId, ErrorMessage);
 	}
 
-	inline static int Browse(SDK::UEngine* Engine, SDK::FWorldContext& WorldContext, SDK::FURL FURL, SDK::FString& Error) {
-		std::string Info;
-		Log("<FunctionHooks.hpp> / Hooks::Functions::Browse():: BEGIN");
-		for (size_t i{0}; i < FURL.Op.Num(); ++i) Info += FURL.Op[i].ToString();
-		Log("Host: " + FURL.Host.ToString() + " | Port: " + std::to_string(FURL.Port));
-		Log("Protocol: " + FURL.Protocol.ToString() + " | Map: " + FURL.Map.ToString() + " | RedirectURL: " + FURL.RedirectURL.ToString() + " | Portal: " + FURL.Portal.ToString());
-		if (!Info.empty()) Log("Op: " + Info);
-		if (Error.IsValid()) Log("Error: " + Error.ToString());
-		Log("<FunctionHooks.hpp> / Hooks::Functions::Browse():: END");
-		//return PTR::FC_Browse(Engine, WorldContext, FURL, Error);
+	inline static std::string BrowseCache{""};
+
+	inline static void Browse(SDK::UEngine* Engine, SDK::FWorldContext& WorldContext, SDK::FURL FURL, SDK::FString& Error) {
+		if (!BrowseCache.empty()) BrowseCache.clear();
+
+		BrowseCache += "Browse :: ";
+		if (FURL.Protocol.IsValid()) BrowseCache += "Protocol= " + FURL.Protocol.ToString();
+		if (FURL.Host.IsValid() && std::to_string(FURL.Port) != "") BrowseCache += " || IP= " + FURL.Host.ToString() + ":" + std::to_string(FURL.Port);
+		else if (FURL.Host.IsValid()) { BrowseCache += "|| Host= " + FURL.Host.ToString(); }
+		if (std::to_string(FURL.Valid) != "") BrowseCache += " || Valid= " + std::to_string(FURL.Valid);
+		if (FURL.Map.IsValid()) BrowseCache += " || Map= " + FURL.Map.ToString();
+		if (FURL.RedirectURL.IsValid()) BrowseCache += " || RedirectURL= " + FURL.RedirectURL.ToString();
+		if (FURL.Portal.IsValid()) BrowseCache += " || Portal= " + FURL.Portal.ToString();
+
+		if (FURL.Op.Num() > 0) {
+			BrowseCache += " || Op= ";
+			for (int i{0}; i < FURL.Op.Num(); ++i) {
+				BrowseCache += "?" + FURL.Op[i].ToString();
+			}
+		}
+
+		Log(BrowseCache);
+		PTR::FC_Browse(Engine, WorldContext, FURL, Error);
 	}
 
 	inline static void SpawnActor(SDK::UWorld* World, SDK::UClass* Class, const SDK::FVector* Location, const SDK::FRotator* Rotation, FActorSpawnParameters* SpawnParameters) {
