@@ -6,7 +6,7 @@ namespace OFF
 {
 	// Basic UE Functions
 
-	OFFSET GEngine("GEngine", 0x0);
+	OFFSET GEngine("GEngine", 0x51AA188);
 	OFFSET GWorld("GWorld", 0x51ADAE0);
 
 	OFFSET FMalloc("FMemory::Malloc", 0x0);
@@ -19,14 +19,14 @@ namespace OFF
 
 	OFFSET ProcessMulticastDelegate("ProcessMulticastDelegate", 0x0);
 	OFFSET LogFInternalImpl("FMsg::Logf_InternalImpl", 0x0);
-	OFFSET IsNonPakFileNameAllowed("FPakPlatformFile::IsNonPakFilenameAllowed", 0x0);
-	OFFSET FindFileInPakFiles("FPakPlatformFile::FindFileInPakFiles", 0x0);
+	OFFSET IsNonPakFileNameAllowed("FPakPlatformFile::IsNonPakFilenameAllowed", 0x2811C30);
+	OFFSET FindFileInPakFiles("FPakPlatformFile::FindFileInPakFiles", 0x280D140);
 	
-	OFFSET UConsole("UConsole::ConsoleCommand", 0x0);
+	OFFSET UConsole("UConsole::ConsoleCommand", 0x2F51E20);
 	OFFSET Login("AGameModeBase::Login", 0x0);
-	OFFSET PreLogin("AGameModeBase::PreLogin", 0x0);
-	OFFSET Browse("UEngine::Browse", 0x0);
-	OFFSET AppPreExit("FEngineLoop::AppPreExit", 0x0);
+	OFFSET PreLogin("AGameModeBase::PreLogin", 0x2B575F0);
+	OFFSET Browse("UEngine::Browse", 0x2F24200);
+	OFFSET AppPreExit("FEngineLoop::AppPreExit", 0x76DA60);
 	OFFSET SpawnActor("UWorld::SpawnActor", 0x0);
 
 	OFFSET WorldGetNetMode("UWorld::InternalGetNetMode", 0x0);

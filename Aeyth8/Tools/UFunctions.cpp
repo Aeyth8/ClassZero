@@ -201,7 +201,7 @@ bool UFunctions::IsNonPakFilenameAllowed(__int64* This, SDK::FString& InFilename
 
 	if (UFunctions::Helpers::CheckForLocalDirectory(InFilename.CStr(), X) && GetFileAttributesW(InFilename.CStr()) != INVALID_FILE_ATTRIBUTES)
 	{
-		//LogA("IsNonPakFilenameAllowed OVERRIDE", InFilename.ToString());
+		LogA("IsNonPakFilenameAllowed OVERRIDE", InFilename.ToString());
 		return true;
 	}
 	
@@ -224,8 +224,8 @@ bool UFunctions::FindFileInPakFiles(__int64* This, const wchar_t* Filename, __in
 		// If the file already exists within the pak file
 		if (X & 0b00100000 && GetFileAttributesW(Filename) != INVALID_FILE_ATTRIBUTES)
 		{
-			//std::wstring WFile(Filename);
-			//LogA("FindFileInPakFiles OVERRIDE", std::string(WFile.begin(), WFile.end()));
+			std::wstring WFile(Filename);
+			LogA("FindFileInPakFiles OVERRIDE", std::string(WFile.begin(), WFile.end()));
 			return false;
 		}
 	}

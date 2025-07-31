@@ -2,6 +2,7 @@
 
 #include "Aeyth8/Global.hpp"
 #include "Aeyth8/Tools/Pointers.h"
+#include "Aeyth8/Logic/FCT.h"
 
 /*
 
@@ -24,12 +25,14 @@ static void Init() {
 	LogA("GetCommandLineA", GetCommandLineA());
 	LogA("INITIALIZED", "The Global Base Address [GBA] is " + HexToString(GBA));	
 
+	FCT::Init_Hooks();
+
 	while (UWorld() == nullptr)
 	{
 		Sleep(2000);
 	}
 
-	//FCT::Init_Vars(UWorld());
+	FCT::Init_Vars(UWorld());
 
 	if (!bConstructedUConsole) bConstructedUConsole = ConstructUConsole();
 }
