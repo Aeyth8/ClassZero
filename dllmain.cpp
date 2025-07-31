@@ -1,53 +1,49 @@
-#include "pch.h"
+#include "Aeyth8/Proxy8/ProxyTypes.h"
+
+#include "Aeyth8/Global.hpp"
+#include "Aeyth8/Tools/Pointers.h"
+
+/*
+
+Written by Aeyth8
+
+https://github.com/Aeyth8
+
+*/
 
 
-
+// My entire codebase has been designed to use namespaces like this.
+using namespace A8CL; using namespace Global; using namespace Pointers;
 
 static void Init() {
 
-	// Retrieves the Global Base Address (GBA) by getting the module handle typedefined as a uintptr_t
+	// Retrieves the Global Base Address (GBA) by getting the module handle casted as a uintptr_t
 	GBA = (uintptr_t)GetModuleHandleA("FCTClient-Win64-Shipping.exe");
 
 	LogWin();
-	Logger::Init();
+	LogA("GetCommandLineA", GetCommandLineA());
+	LogA("INITIALIZED", "The Global Base Address [GBA] is " + HexToString(GBA));	
 
-	Log("GAME INITIALIZED\nGlobal Base Address = " + HexToString(GBA));
+	while (UWorld() == nullptr)
+	{
+		Sleep(2000);
+	}
 
-	// Allocates local pointers
-	Engine = UEngine(); World = UWorld(); KismetSys = UKismetSys();
+	//FCT::Init_Vars(UWorld());
 
-
-	ConstructUConsole();
-
-	// These pointers should remain the same across the entirety of an instance's runtime.
-	FCT::Instance = static_cast<SDK::UFCTGameInstanceBP_C*>(World->OwningGameInstance);
-	
-	Hooks::Init();
-	Hooks::CreateAndEnableAllHooks({2});
+	if (!bConstructedUConsole) bConstructedUConsole = ConstructUConsole();
 }
 
-
-int __stdcall DllMain(HMODULE hModule, DWORD  ulReasonForCall, LPVOID lpReserved) {
+int __stdcall DllMain(HMODULE hModule, DWORD ulReasonForCall, LPVOID lpReserved) {
 	DisableThreadLibraryCalls(hModule);
 
 	if (ulReasonForCall != DLL_PROCESS_ATTACH)
 		return 1;
 
-	HANDLE hThread = CreateThread(nullptr, 0,
-		(LPTHREAD_START_ROUTINE)Init, hModule, 0, 0);
-	if (hThread != nullptr)
-		CloseHandle(hThread);
+	Global::InitLog();
+
+	if (Proxy::Attach(hModule))
+		ConstructThread(Init);
 
 	return 1;
-}
-
-static void ProcessEnd() {
-	Hooks::DisableAllHooks();
-	Hooks::Uninit();
-	Logger::Close();
-}
-
-void PreExit() {
-	ConstructThread(ProcessEnd);
-	UFunctions::PTR::FC_AppPreExit();
 }

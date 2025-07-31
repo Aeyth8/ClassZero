@@ -1,134 +1,134 @@
 #pragma once
-#include "../../pch.h" // Make sure that MinHook.h is included in pch.h, or directly included here.
-#include "UFunctions.hpp"
+#include "../../MinHook/MinHook.h"
+#include <string>
+#include <vector>
+#include <format>
 
+/*
 
+Written by Aeyth8
+
+https://github.com/Aeyth8
+
+*/
+
+namespace A8CL
+{
+
+// An all-in-one object for storing and utilizing static offsets.
+// @param [std::string] Name
+// @param [uintptr_t] Offset
+class OFFSET
+{
+private:
+
+	inline static std::vector<std::string> StringIndexArray{};
+	uint32_t StringIndex;
+
+public:
+
+	OFFSET(const std::string& Name, const uintptr_t& Offset) : 
+		StringIndex(StringIndexArray.size()), Offset(Offset)
+	{
+		StringIndexArray.push_back(Name);
+	};
+
+	~OFFSET()
+	{
+		StringIndexArray[StringIndex].erase();
+	}
+
+	// Uncalculated
+	const uintptr_t Offset;
+
+	// Calculated 
+	uintptr_t Address{0};
+
+	// A pointer to the function after hooking, the trampoline.
+	LPVOID FunctionCall{0};
+
+	std::string& GetName() const { return StringIndexArray[StringIndex]; }
+	std::wstring GetNameW() const { return std::wstring(StringIndexArray[StringIndex].begin(), StringIndexArray[StringIndex].end()); }
+	uintptr_t& PlusBase() { return Address == 0 ? Address = Offset + (uintptr_t)GetModuleHandle(0) : Address; }
+
+	template <typename T>
+	T VerifyFC()
+	{
+		if (!this->FunctionCall) return reinterpret_cast<T>(PlusBase());
+		return reinterpret_cast<T>(this->FunctionCall);
+	}
+
+};
+
+// A MinHook wrapper
 class Hooks
 {
 private:
-	struct HookStructure { uintptr_t Offset; LPVOID DetourFunction; LPVOID FunctionCall{0}; const std::string& HookName;  uintptr_t CalculatedAddress{0}; };
-	inline static HookStructure Instance[] =
-	{
-		{0x2F51E20, UFunctions::UConsole, &UFunctions::PTR::FC_UConsole, "UConsole"},
-		{0x2F8A4C0, Net::WorldGetNetMode, &Net::FC_WorldGetNetMode, "WorldGetNetMode"},
-		{0x28B8090, Net::ActorGetNetMode, &Net::FC_ActorGetNetMode, "ActorGetNetMode"},
-		{0x076DA60, PreExit, &UFunctions::PTR::FC_AppPreExit, "AppPreExit"},
-		{0x2F24200, UFunctions::Browse, &UFunctions::PTR::FC_Browse, "Browse"},
-	};
 
-	// Handles the log messages and behavior for CreateAndEnableAllHooks()
-	inline static bool HookStatus(MH_STATUS& Status, std::string HookName, int Message, LPVOID FunctionCall = 0) { if (Status == MH_STATUS::MH_ERROR_NOT_INITIALIZED) { Log("MinHook not initialized!"); return false; }
-		if (Status == MH_OK) {
-			if (Message == 0) Log("Successfully created a hook for " + HookName + ".");
-			else if (Message == 1) { Log("Successfully enabled a hook for " + HookName + ". Pointer = " + HexToString(reinterpret_cast<uintptr_t>(FunctionCall))); }
-			else { Log("Successfully disabled hook for" + HookName + "."); }
-			return true;
-		}
-		else { 
-			if (Message == 0) Log("Failed to create a hook for " + HookName + ".");
-			else if (Message == 1) { Log("Failed to enable a hook for " + HookName + "."); }
-			else { Log("Failed to disable hook for" + HookName + "."); }
-			return false;
-		}
+	// Useful for retrieving verbose information while still using a yes/no system 
+	// These flags represent if all hooks in a list failed or succeeded.
+	// Anything else means that only some of them succeeded.
+	enum HookNum { ALL_FAILED = -1, ALL_SUCCEEDED = -2 };
+
+	// Used for logging the action type. 
+	enum HookType { CREATE = 0, ENABLE = 1, DISABLE = 2, REMOVE = 3 };
+
+	constexpr static const char* HookTypeS[] = { "create", "enable", "disable", "remove" };
+
+	// Used to decide/output the flags.
+	// A is the amount succeeded | B is the total amount.
+	const inline static HookNum ENUM(const int& A, const int& B)
+	{
+		if (A == B) return ALL_SUCCEEDED;
+		return A == 0 ? ALL_FAILED : (HookNum)A;
 	}
+
+
+	// Converts the enum into a bool
+	inline static bool STAT(const MH_STATUS& Status) { return (Status == MH_OK); }
+
+	static void HookLog(const bool& Status, const HookType& Type, class OFFSET& Obj);
+	static void HookLog(const bool& Status, const HookType& Type, uintptr_t TargetAddress, LPVOID FunctionCall = 0);
 
 	// Idiot proofing.
 	inline static bool MH_INIT{false};
 
-	// Used in CreateAndEnableHook()
-	inline static int NamelessIteration{0};
-	
 public:
 
-	// Must be called only once before any hooks are initiated.
-	inline static void Init() {
-		if (MH_INIT) return;
-		MH_STATUS Status = MH_Initialize();
+	//struct HookStructure { const uintptr_t Offset; LPVOID DetourFunction; LPVOID FunctionCall{0}; const std::string HookName;  uintptr_t CalculatedAddress{0}; };
 
-		if (Status != MH_STATUS::MH_OK && Status != MH_STATUS::MH_ERROR_ALREADY_INITIALIZED) {
-			ErrorBox(L"! FATAL ERROR !", L"MinHook has failed to initialize! Please restart the game and try again.\nIf the problem persists, try restarting your computer, refer to the source code, or ask me by filing an issue on my GitHub (Aeyth8)", MB_OK);
-		}
+	struct HookStructure { class OFFSET& Obj; LPVOID DetourFunction; };
 
-		Log("MinHook has been initialized.");
-		MH_INIT = true;
-	}
+	// Must be called before hooking anything.
+	static bool Init();
+	static bool Uninit();
 
-	// "Must" be called only once at the end of the program after all hooks are disabled. I haven't been doing this for a long time so I doubt it truly matters.
-	inline static void Uninit() {
-		if (!MH_INIT) return;
-		MH_STATUS Status = MH_Uninitialize();
+	static bool CreateHook(const uintptr_t TargetAddress, LPVOID DetourFunction, LPVOID FunctionCall);
+	static bool CreateHook(class OFFSET& Obj, LPVOID DetourFunction);
+	static HookNum CreateHooks(std::vector<HookStructure>& Table);
 
-		if (Status != MH_STATUS::MH_OK && Status != MH_STATUS::MH_ERROR_NOT_INITIALIZED) { Log("Failed to uninitialize MinHook, this isn't too important so don't worry about it."); return; }
-		Log("MinHook has been uninitialized.");
-		MH_INIT = false;
-	}
+	static bool EnableHook(const uintptr_t TargetAddress);
+	static bool EnableHook(class OFFSET& Obj);
+	static HookNum EnableHooks(std::vector<OFFSET>& Table);
+	static void EnableAllHooks();
 
-	// Manually create and enable any hook. 
-	inline static bool CreateAndEnableHook(uintptr_t TargetAddress, LPVOID DetourFunction, LPVOID OriginalFunction, std::string HookName = "") {
-		if (HookName == "") { HookName = "NO_NAME_" + std::to_string(NamelessIteration); NamelessIteration++; }
-		
-		MH_STATUS Status = MH_CreateHook(reinterpret_cast<LPVOID*>(TargetAddress), DetourFunction, reinterpret_cast<LPVOID*>(OriginalFunction));
-		if (!HookStatus(Status, HookName, 0)) return false;
-		
-		Status = MH_EnableHook(reinterpret_cast<LPVOID*>(TargetAddress));
-		
-		if (HookStatus(Status, HookName, 1, OriginalFunction)) return true;
-	}
+	static bool CreateAndEnableHook(const uintptr_t TargetAddress, LPVOID DetourFunction, LPVOID FunctionCall);
+	static bool CreateAndEnableHook(class OFFSET& Obj, LPVOID DetourFunction);
+	static HookNum CreateAndEnableHooks(std::vector<HookStructure>& Table);
 
-	// Main hooking function which iterates through all hooks, creating and enabling them while handling errors.
-	// > Contains an optional int vector to exclude certain hooks specified by the iterator within HookStructure Instance[] 
-	// Example : CreateAndEnableAllHooks({0, 5, 6});
-	inline static void CreateAndEnableAllHooks(const std::vector<int>& ExceptFor = {}) {
-		for (int i{0}; i < std::size(Instance); ++i) {
-			// If an exception list was provided, it will make sure to skip it.
-			if (!ExceptFor.empty() && std::find(ExceptFor.begin(), ExceptFor.end(), i) != ExceptFor.end()) continue;
+	static bool DisableHook(const uintptr_t TargetAddress);
+	static bool DisableHook(class OFFSET& Obj);
+	static HookNum DisableHooks(std::vector<OFFSET>& Table);
+	static void DisableAllHooks();
 
-			// Calculate all addresses to be dynamically used. 
-			Instance[i].CalculatedAddress = (GBA + Instance[i].Offset);
+	static bool RemoveHook(const uintptr_t TargetAddress);
+	static bool RemoveHook(class OFFSET& Obj);
+	static HookNum RemoveHooks(std::vector<OFFSET>& Table);
 
-			MH_STATUS Status = MH_CreateHook(reinterpret_cast<LPVOID>(Instance[i].CalculatedAddress), Instance[i].DetourFunction, reinterpret_cast<LPVOID*>(Instance[i].FunctionCall));
+	static bool If(const HookNum& Result);
 
-			if (!HookStatus(Status, Instance[i].HookName, 0, Instance[i].FunctionCall)) continue;
 
-			Status = MH_EnableHook(reinterpret_cast<LPVOID>(Instance[i].CalculatedAddress));
 
-			HookStatus(Status, Instance[i].HookName, 1, Instance[i].FunctionCall);
-		}
-	}
-
-	// Manually disable certain hooks.
-	inline static bool DisableHook(uintptr_t TargetAddress, std::string HookName) {
-		MH_STATUS Status = MH_DisableHook(reinterpret_cast<LPVOID*>(TargetAddress));
-		if (HookStatus(Status, HookName, 2)) return true;
-		return false;
-	}
-
-	// Disable everything, for end of runtime.
-	inline static void DisableAllHooks() { MH_DisableHook(MH_ALL_HOOKS); Log("Disabled all hooks."); }
-
-};
-
-// Custom hooks and function calls for engine debugging.
-class Debug
-{
-public:
-	inline static bool HookWorldGetNetMode(Net::ENetMode HookMode = Net::ENetMode::Passthrough, uintptr_t OverrideOffset = Net::UWorldGetNetMode) {
-		Net::WorldHookMode = HookMode;
-		return Hooks::CreateAndEnableHook((GBA + OverrideOffset), Net::WorldGetNetMode, &Net::FC_WorldGetNetMode, "WorldGetNetMode");
-	}
-
-	inline static bool HookActorGetNetMode(Net::ENetMode HookMode = Net::ENetMode::Passthrough, uintptr_t OverrideOffset = Net::AActorGetNetMode) {
-		Net::ActorHookMode = HookMode;
-		return Hooks::CreateAndEnableHook((GBA + OverrideOffset), Net::ActorGetNetMode, &Net::FC_ActorGetNetMode, "ActorGetNetMode");
-	}
-
-	template <typename UClass>
-	inline static void SpawnActor(SDK::UClass* Class = UClass::StaticClass(), SDK::FVector Location = Player0()->K2_GetActorLocation()) {
-		static __int64 (*Function)(SDK::UWorld* World, SDK::UClass* Class, SDK::FVector Location, SDK::FRotator Rotation, FActorSpawnParameters SpawnParameters) = decltype(Function)(GBA + 0x2C16BF0);
-		FActorSpawnParameters SpawnParameters{};
-		SpawnParameters.SpawnCollisionHandlingOverride = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-		Function(UWorld(), Class, Location, SDK::FRotator(), SpawnParameters);
-	}
 
 
 };
@@ -136,3 +136,5 @@ public:
 
 
 
+
+}

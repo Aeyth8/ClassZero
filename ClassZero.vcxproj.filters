@@ -1,101 +1,170 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\CoreUObject_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\Engine_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\EngineSettings_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\FCT_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\FCTGameInstanceBP_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\OnlineSubsystem_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\SCT_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\Basic.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\XrayGA_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\CharacterSCTBP_functions.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{5ede9aae-a459-4df5-9fc8-c756cc508f36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK">
-      <UniqueIdentifier>{3e17a6a1-2c35-48f9-b4d3-d0b6b06edae8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Aeyth8">
-      <UniqueIdentifier>{5941d68e-cb98-4742-888a-4aac342d3f1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Aeyth8\Hooks">
-      <UniqueIdentifier>{5d59ea4e-b13d-4131-96b5-af9cca722635}</UniqueIdentifier>
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="MinHook">
-      <UniqueIdentifier>{faecb2b6-6f24-415f-9b60-b472e40a3baa}</UniqueIdentifier>
+      <UniqueIdentifier>{fc94016c-c77a-47db-b169-e4b3243e0f4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Aeyth8">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="SDK\CPP">
+      <UniqueIdentifier>{484f4774-efa1-4f5d-ac54-3bb2b085ab1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Core">
+      <UniqueIdentifier>{d5ef900d-0290-40cf-a443-958ac94710db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Headers">
+      <UniqueIdentifier>{9d94c7bd-c28f-40b8-99bc-0d5ca6351d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook\src">
+      <UniqueIdentifier>{cf953584-bb7f-46ac-b121-8c58ec1ea767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook\src\hde">
+      <UniqueIdentifier>{c8613493-0116-483f-936b-cd8c3310523b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aeyth8\Hooks">
+      <UniqueIdentifier>{807d7c9a-4ffb-4c76-bb2d-7cfff92a3dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aeyth8\Logic">
+      <UniqueIdentifier>{66c2e8a6-0c37-4550-b486-28519a932c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aeyth8\Proxy8">
+      <UniqueIdentifier>{cdbfba41-128a-4a94-968e-f33721766baa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aeyth8\Tools">
+      <UniqueIdentifier>{790fd1bb-f58e-4c18-9360-cc435151ac17}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Source Files</Filter>
+    <None Include="Dumper-7\NameCollisions.inl">
+      <Filter>SDK</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dumper-7\PropertyFixup.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Dumper-7\SDK.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Dumper-7\UnrealContainers.hpp">
+      <Filter>SDK</Filter>
     </ClInclude>
     <ClInclude Include="MinHook\MinHook.h">
       <Filter>MinHook</Filter>
     </ClInclude>
-    <ClInclude Include="SDK.hpp">
-      <Filter>SDK</Filter>
+    <ClInclude Include="MinHook\src\buffer.h">
+      <Filter>MinHook\src</Filter>
     </ClInclude>
-    <ClInclude Include="UnrealContainers.hpp">
-      <Filter>SDK</Filter>
+    <ClInclude Include="MinHook\src\trampoline.h">
+      <Filter>MinHook\src</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\Hooks\Hooks.hpp">
-      <Filter>Aeyth8\Hooks</Filter>
+    <ClInclude Include="MinHook\src\hde\hde32.h">
+      <Filter>MinHook\src\hde</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\Hooks\UFunctions.hpp">
-      <Filter>Aeyth8\Hooks</Filter>
+    <ClInclude Include="MinHook\src\hde\hde64.h">
+      <Filter>MinHook\src\hde</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\Hooks\Replication.hpp">
-      <Filter>Aeyth8\Hooks</Filter>
+    <ClInclude Include="MinHook\src\hde\pstdint.h">
+      <Filter>MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\table32.h">
+      <Filter>MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\table64.h">
+      <Filter>MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Aeyth8\Global.hpp">
+      <Filter>Aeyth8</Filter>
     </ClInclude>
     <ClInclude Include="Aeyth8\Logger.hpp">
       <Filter>Aeyth8</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\Pointers.hpp">
+    <ClInclude Include="Aeyth8\Offsets.h">
       <Filter>Aeyth8</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\Structs.hpp">
-      <Filter>Aeyth8</Filter>
+    <ClInclude Include="Aeyth8\Proxy8\Proxy.h">
+      <Filter>Aeyth8\Proxy8</Filter>
     </ClInclude>
-    <ClInclude Include="PropertyFixup.hpp">
-      <Filter>SDK</Filter>
+    <ClInclude Include="Aeyth8\Proxy8\ProxyTypes.h">
+      <Filter>Aeyth8\Proxy8</Filter>
     </ClInclude>
-    <ClInclude Include="Aeyth8\FCTPointers.hpp">
-      <Filter>Aeyth8</Filter>
+    <ClInclude Include="Aeyth8\Hooks\Hooks.hpp">
+      <Filter>Aeyth8\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Aeyth8\Tools\BytePatcher.h">
+      <Filter>Aeyth8\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Aeyth8\Tools\Pointers.h">
+      <Filter>Aeyth8\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Aeyth8\Tools\UFunctions.hpp">
+      <Filter>Aeyth8\Tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NameCollisions.inl">
-      <Filter>SDK</Filter>
-    </None>
+    <ClCompile Include="Dumper-7\SDK\Basic.cpp">
+      <Filter>SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Dumper-7\SDK\Engine_functions.cpp">
+      <Filter>SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Dumper-7\SDK\CoreUObject_functions.cpp">
+      <Filter>SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Dumper-7\SDK\FCT_functions.cpp">
+      <Filter>SDK\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\buffer.c">
+      <Filter>MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hook.c">
+      <Filter>MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\trampoline.c">
+      <Filter>MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde32.c">
+      <Filter>MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde64.c">
+      <Filter>MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Global.cpp">
+      <Filter>Aeyth8</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Offsets.cpp">
+      <Filter>Aeyth8</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Proxy8\Proxy.cpp">
+      <Filter>Aeyth8\Proxy8</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Proxy8\ProxyTypes.cpp">
+      <Filter>Aeyth8\Proxy8</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Hooks\Hooks.cpp">
+      <Filter>Aeyth8\Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Tools\BytePatcher.cpp">
+      <Filter>Aeyth8\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Tools\Pointers.cpp">
+      <Filter>Aeyth8\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeyth8\Tools\UFunctions.cpp">
+      <Filter>Aeyth8\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
